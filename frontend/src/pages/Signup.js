@@ -21,6 +21,11 @@ function Signup() {
 
     console.log(name ,age ,email ,password ,role ,locality ,street ,city ,state);
     
+    if (!isValidAge(age)) {
+      toast.error('Invalid age. Age should be above 21.');
+      return;
+    }
+
     if (!isValidName(name)) {
       toast.error('Invalid name. Name should not contain numbers.');
       return;
@@ -61,14 +66,18 @@ function Signup() {
   };
 
   const isValidName = (name) => {
-    // You can define your validation criteria here
+    
     return /^[A-Za-z\s]+$/.test(name);
   };
 
   const isValidPassword = (password) => {
-    // You can define your validation criteria here
-    // At least one number, one character, and one special symbol
+    
     return /^(?=.*\d)(?=.*[a-zA-Z])(?=.*[^a-zA-Z\d\s]).{8,}$/.test(password);
+  };
+
+  const isValidAge = (age) => {
+    
+    return !isNaN(age) && parseInt(age) > 21;
   };
 
   return (
