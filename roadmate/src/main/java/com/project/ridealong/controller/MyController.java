@@ -28,7 +28,7 @@ import com.project.ridealong.entities.Post;
 import com.project.ridealong.entities.Riders;
 import com.project.ridealong.entities.Role;
 import com.project.ridealong.entities.Trip;
-//import org.springframework.security.crypto.password.PasswordEncoder;
+
 
 import jakarta.servlet.http.HttpServletResponse;
 
